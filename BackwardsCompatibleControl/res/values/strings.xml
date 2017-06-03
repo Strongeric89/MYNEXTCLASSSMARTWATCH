@@ -2,13 +2,13 @@
 <!-- No translation of sample extensions -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- Name of app, shown when installing/uninstalling extension -->
-    <string name="app_name">Backwards compatible control extension</string>
+    <string name="app_name">Next Class</string>
     <!-- Title of preference activity -->
-    <string name="preference_activity_title">Backwards compatible control settings</string>
+    <string name="preference_activity_title">Next Class</string>
     <!-- Name of extension, shown in preferences -->
-    <string name="extension_name">Backwards compatible control</string>
+    <string name="extension_name">Next Class</string>
     <!-- Configuration title shown in preferences -->
-    <string name="configuration_text">Backwards compatible control settings</string>
+    <string name="configuration_text">Next Class</string>
     <!-- Menu option shown in preferences -->
     <string name="preference_option_read_me">READ ME</string>
     <!-- Read me text shown in dialog -->
