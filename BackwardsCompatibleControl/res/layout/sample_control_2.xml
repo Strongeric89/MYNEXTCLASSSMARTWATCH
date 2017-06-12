@@ -9,30 +9,20 @@
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:text="My Next Class" />
-
-    <TextView
-        android:id="@+id/classroom"
+        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="17dp"
-        android:text="Class Room"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:layout_alignParentTop="true"
+        android:text="clickme" />
 
     <TextView
         android:id="@+id/module"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/classroom"
-        android:layout_below="@+id/classroom"
-        android:layout_marginTop="14dp"
-        android:text="Module"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/button1"
+        android:text=" "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

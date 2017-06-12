@@ -38,9 +38,9 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-//import java.util.Calendar;
-//import java.util.Date;
-//import java.util.HashMap;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
 
 import com.sonyericsson.extras.liveware.aef.control.Control;
 import com.sonyericsson.extras.liveware.extension.util.ExtensionUtils;
@@ -60,14 +60,14 @@ import com.example.sonymobile.smartextension.backwardscompatiblecontrol.R;
 class ControlSmartWatch2 extends ControlExtension {
 
 
-//	// structures
-//	public HashMap<Integer, String[]> mapMonday = new HashMap<Integer, String[]>();
-//	public HashMap<Integer, String[]> mapTuesday = new HashMap<Integer, String[]>();
-//	public HashMap<Integer, String[]> mapWednesday = new HashMap<Integer, String[]>();
-//	public HashMap<Integer, String[]> mapThursday = new HashMap<Integer, String[]>();
-//	public HashMap<Integer, String[]> mapFriday = new HashMap<Integer, String[]>();
-//	public String[] namesOfDays =
-//	{ "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT" };
+// structures
+	public HashMap<Integer, String[]> mapMonday = new HashMap<Integer, String[]>();
+	public HashMap<Integer, String[]> mapTuesday = new HashMap<Integer, String[]>();
+	public HashMap<Integer, String[]> mapWednesday = new HashMap<Integer, String[]>();
+	public HashMap<Integer, String[]> mapThursday = new HashMap<Integer, String[]>();
+	public HashMap<Integer, String[]> mapFriday = new HashMap<Integer, String[]>();
+	public String[] namesOfDays =
+	{ "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT" };
 	
     private static final int ANIMATION_DELTA_MS = 500;
     private static final int SELECT_TOGGLER_MS = 2000;
@@ -229,398 +229,417 @@ class ControlSmartWatch2 extends ControlExtension {
         }
     }
     
-//    public String[] details(){
-//    	String moduleRoom [] = new String[2];
-//    	
-//    	String toCut = null;
-//		String buttonDisplay = null;
-//		String text1Display = null;
-//		String text2Display = null;
-//		String text3Display = null;
-//		String text4Display = null;
-//		String nowDisplay = null;
-//		String nextDisplay = null;
-//		String week1 = null;
-//		String mins = null;
-//
-//    	
-//    	int day = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
-//    	Date today = new Date();
-//		int hour = (int) today.getHours();
-//		int min = (int) today.getMinutes();
-//		
-//		day = day - 1;
-//
-//		switch (day)
-//		{
-//		case 1:
-//		{
-//			// monday
-//			// call mondayMap
-//
-//			if (hour < 8 || hour >= 18)
-//			{
-//				buttonDisplay = "no classes";
-//				break;
-//			}
-//
-//			toCut = populateTimeTable(day, hour);
-//
-//			String words[] = new String[4];
-//			int i = 0;
-//			for (String word : toCut.split("-"))
-//			{
-//				words[i] = word;
-//				i++;
-//			}
-//			text1Display = words[0];
-//			text2Display = words[1];
-//			text3Display = words[2];
-//			text4Display = words[3];
-//
-//			buttonDisplay = "Remaining Mins: " + min;
-//
-//		}
-//			break;
-//
-//		case 2:
-//		{
-//			// tuesday
-//			// call tueMap
-//
-//			if (hour < 8 || hour >= 18)
-//			{
-//
-//				buttonDisplay = "no classes";
-//				break;
-//			}
-//
-//			toCut = populateTimeTable(day, hour);
-//
-//			String words[] = new String[4];
-//			int i = 0;
-//			for (String word : toCut.split("-"))
-//			{
-//				words[i] = word;
-//				i++;
-//			}
-//			text1Display = words[0];
-//			text2Display = words[1];
-//			text3Display = words[2];
-//			text4Display = words[3];
-//
-//		
-//			buttonDisplay = "Remaining Mins: " + min;
-//
-//		}
-//			break;
-//
-//		case 3:
-//		{
-//			// wedneday
-//			// call wedMap
-//
-//			if (hour < 9 || hour >= 18)
-//			{
-//				buttonDisplay = "no classes";
-//
-//				break;
-//			}
-//			toCut = populateTimeTable(day, hour);
-//
-//			String words[] = new String[4];
-//			int i = 0;
-//			for (String word : toCut.split("-"))
-//			{
-//				words[i] = word;
-//				i++;
-//			}
-//			text1Display = words[0];
-//			text2Display = words[1];
-//			text3Display = words[2];
-//			text4Display = words[3];
-//
-//		
-//			buttonDisplay = "Remaining Mins: " + min;
-//
-//		}
-//			break;
-//
-//		case 4:
-//		{
-//			// thursday
-//			// call thurMap
-//
-//			if (hour < 8 || hour >= 18)
-//			{
-//				buttonDisplay = "no classes";
-//
-//				break;
-//			}
-//			toCut = populateTimeTable(day, hour);
-//
-//			String words[] = new String[4];
-//			int i = 0;
-//			for (String word : toCut.split("-"))
-//			{
-//				words[i] = word;
-//				i++;
-//			}
-//			text1Display = words[0];
-//			text2Display = words[1];
-//			text3Display = words[2];
-//			text4Display = words[3];
-//
-//		
-//			buttonDisplay = "Remaining Mins: " + min;
-//
-//		}
-//			break;
-//
-//		case 5:
-//		{
-//			// friday
-//			// call friMap
-//
-//			if (hour < 8 || hour >= 18)
-//			{
-//				buttonDisplay = "no classes";
-//
-//				break;
-//			}
-//			toCut = populateTimeTable(day, hour);
-//
-//			String words[] = new String[4];
-//			int i = 0;
-//			for (String word : toCut.split("-"))
-//			{
-//				words[i] = word;
-//				i++;
-//			}
-//			text1Display = words[0];
-//			text2Display = words[1];
-//			text3Display = words[2];
-//			text4Display = words[3];
-//
-//			
-//
-//		}
-//			break;
-//
-//		default:
-//		{
-//
-//			buttonDisplay = "No Classes";
-//			text1Display = "no classes";
-//			text2Display = "no classes";
-//			text3Display = "no classes";
-//			text4Display = "no classes";
-//
-//		}
-//			break;
-//
-//		}// end switch
+    public String[] details(){
+    	String moduleRoom [] = new String[5];
+    	
+    	String toCut = null;
+		String buttonDisplay = null;
+		String text1Display = null;
+		String text2Display = null;
+		String text3Display = null;
+		String text4Display = null;
+		String text5Display = null;
+	
+	
+		String mins = null;
+
+    	
+    	int day = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
+    	Date today = new Date();
+		int hour = (int) today.getHours();
+		int min = (int) today.getMinutes();
+		
+		day = day - 1;
+
+		switch (day)
+		{
+		case 1:
+		{
+			// monday
+			// call mondayMap
+
+			if (hour < 8 || hour >= 18)
+			{
+				buttonDisplay = "no classes";
+				break;
+			}
+
+			toCut = populateTimeTable(day, hour);
+
+			String words[] = new String[4];
+			int i = 0;
+			for (String word : toCut.split("-"))
+			{
+				words[i] = word;
+				i++;
+			}
+			text1Display = words[0];
+			text2Display = words[1];
+			text3Display = words[2];
+			text4Display = words[3];
+		
+			
+
+			buttonDisplay = "Remaining Mins: " + min;
+			text5Display = buttonDisplay;
+
+		}
+			break;
+
+		case 2:
+		{
+			// tuesday
+			// call tueMap
+
+			if (hour < 8 || hour >= 18)
+			{
+
+				buttonDisplay = "no classes";
+				break;
+			}
+
+			toCut = populateTimeTable(day, hour);
+
+			String words[] = new String[4];
+			int i = 0;
+			for (String word : toCut.split("-"))
+			{
+				words[i] = word;
+				i++;
+			}
+			text1Display = words[0];
+			text2Display = words[1];
+			text3Display = words[2];
+			text4Display = words[3];
+
+		
+			buttonDisplay = "Remaining Mins: " + min;
+			text5Display = buttonDisplay;
+
+		}
+			break;
+
+		case 3:
+		{
+			// wedneday
+			// call wedMap
+
+			if (hour < 9 || hour >= 18)
+			{
+				buttonDisplay = "no classes";
+
+				break;
+			}
+			toCut = populateTimeTable(day, hour);
+
+			String words[] = new String[4];
+			int i = 0;
+			for (String word : toCut.split("-"))
+			{
+				words[i] = word;
+				i++;
+			}
+			text1Display = words[0];
+			text2Display = words[1];
+			text3Display = words[2];
+			text4Display = words[3];
+
+		
+			buttonDisplay = "Remaining Mins: " + min;
+			text5Display = buttonDisplay;
+
+		}
+			break;
+
+		case 4:
+		{
+			// thursday
+			// call thurMap
+
+			if (hour < 8 || hour >= 18)
+			{
+				buttonDisplay = "no classes";
+
+				break;
+			}
+			toCut = populateTimeTable(day, hour);
+
+			String words[] = new String[4];
+			int i = 0;
+			for (String word : toCut.split("-"))
+			{
+				words[i] = word;
+				i++;
+			}
+			text1Display = words[0];
+			text2Display = words[1];
+			text3Display = words[2];
+			text4Display = words[3];
+
+		
+			buttonDisplay = "Remaining Mins: " + min;
+			text5Display = buttonDisplay;
+
+		}
+			break;
+
+		case 5:
+		{
+			// friday
+			// call friMap
+
+			if (hour < 8 || hour >= 18)
+			{
+				buttonDisplay = "no classes";
+
+				break;
+			}
+			toCut = populateTimeTable(day, hour);
+
+			String words[] = new String[4];
+			int i = 0;
+			for (String word : toCut.split("-"))
+			{
+				words[i] = word;
+				i++;
+			}
+			text1Display = words[0];
+			text2Display = words[1];
+			text3Display = words[2];
+			text4Display = words[3];
+			buttonDisplay = "Remaining Mins: " + min;
+			text5Display = buttonDisplay;
+
+			
+
+		}
+			break;
+
+		default:
+		{
+
+			buttonDisplay = "No Classes";
+			text1Display = "no classes";
+			text2Display = "no classes";
+			text3Display = "no classes";
+			text4Display = "no classes";
+
+		}
+			break;
+
+		}// end switch
 //
 //		/*
 //		 * MAIN PART TO BE DISPLAYED
 //		 */
 //
-////		module.setText(text3Display);
-////		classroom.setText(text4Display);
-//		
-//
-//		moduleRoom[0] = text3Display;
-//		moduleRoom[1] = text4Display;
-//		
-//    	return moduleRoom;
-//    	
-//    }//end details
-//    
-//	public String populateTimeTable(int flag, int key)
-//	{
-//
-//		if (flag == 1)
-//		{
-//			// each field must have 4 indexes - current class - room,
-//			// next class = room
-//			mapMonday.put(8, new String[]
-//			{ "No class", "No class" });
-//			mapMonday.put(9, new String[]
-//			{ "Networking", "Annex 3022" });
-//			mapMonday.put(10, new String[]
-//			{ "Networking", "Annex 3022" });
-//			mapMonday.put(11, new String[]
-//			{ "Networking lab A", "AU 1005" });
-//			mapMonday.put(12, new String[]
-//			{ "Networking lab A", "AU 1005" });
-//			mapMonday.put(13, new String[]
-//			{ "free", "free" });
-//			mapMonday.put(14, new String[]
-//			{ "Free", "Free" });
-//			mapMonday.put(15, new String[]
-//			{ "Maths", "Annex 3020" });
-//			mapMonday.put(16, new String[]
-//			{ "Networking", "Lab AU1005 (group B/C)" });
-//			mapMonday.put(17, new String[]
-//			{ "Networking", "Lab AU1005(group B/C)" });
-//			mapMonday.put(18, new String[]
-//			{ "Finished", "Home" });
-//
-//			// class room
-//			return mapMonday.get(key)[0] + "-" + mapMonday.get(key)[1] + "-" + mapMonday.get(key + 1)[0] + "-"
-//					+ mapMonday.get(key + 1)[1];
-//		}
-//
-//		else if (flag == 2)
-//		{
-//			mapTuesday.put(8, new String[]
-//			{ "no class", "no class" });
-//			mapTuesday.put(9, new String[]
-//			{ "DataBases", "Annex 3011" });
-//			mapTuesday.put(10, new String[]
-//			{ "Java", "Annex G025" });
-//			mapTuesday.put(11, new String[]
-//			{ "Java", "Annex 3021" });
-//			mapTuesday.put(12, new String[]
-//			{ "Free", "Free" });
-//			mapTuesday.put(13, new String[]
-//			{ "DataBases", "Annex 3021" });
-//			mapTuesday.put(14, new String[]
-//			{ "Free", "Free" });
-//			mapTuesday.put(15, new String[]
-//			{ "HCI", "Main B034" });
-//			mapTuesday.put(16, new String[]
-//			{ "HCI", "Lab AU1006" });
-//			mapTuesday.put(17, new String[]
-//			{ "HCI", "Lab AU1006" });
-//			mapTuesday.put(18, new String[]
-//			{ "Finished", "No Class" });
-//
-//			// class room
-//			return mapTuesday.get(key)[0] + "-" + mapTuesday.get(key)[1] + "-" + mapTuesday.get(key + 1)[0]
-//					+ "-" + mapTuesday.get(key + 1)[1];
-//
-//		}
-//
-//		else if (flag == 3)
-//		{
-//			mapWednesday.put(8, new String[]
-//			{ "no class", "no class" });
-//			mapWednesday.put(9, new String[]
-//			{ "Free", "Free" });
-//			mapWednesday.put(10, new String[]
-//			{ "Maths", "Annex G028" });
-//			mapWednesday.put(11, new String[]
-//			{ "Web Development", "Annex 3020" });
-//			mapWednesday.put(12, new String[]
-//			{ "Web Development", "Annex 3020" });
-//			mapWednesday.put(13, new String[]
-//			{ "Internship", "Main B034" });
-//			mapWednesday.put(14, new String[]
-//			{ "Free", "Free" });
-//			mapWednesday.put(15, new String[]
-//			{ "Free", "Free" });
-//			mapWednesday.put(16, new String[]
-//			{ "free", "free" });
-//			mapWednesday.put(17, new String[]
-//			{ "free", "free" });
-//			mapWednesday.put(18, new String[]
-//			{ "Finished", "No class" });
-//
-//			// class room
-//			return mapWednesday.get(key)[0] + "-" + mapWednesday.get(key)[1] + "-"
-//					+ mapWednesday.get(key + 1)[0] + "-" + mapWednesday.get(key + 1)[1];
-//
-//		}
-//
-//		else if (flag == 4)
-//		{
-//			mapThursday.put(8, new String[]
-//			{ "no class", "no class" });
-//			mapThursday.put(9, new String[]
-//			{ "Free", "Free" });
-//			mapThursday.put(10, new String[]
-//			{ "Java", "Annex  G027" });
-//			mapThursday.put(11, new String[]
-//			{ "Java", "Lab Annex 3008" });
-//			mapThursday.put(12, new String[]
-//			{ "Java", "Lab Annex 3008" });
-//			mapThursday.put(13, new String[]
-//			{ "Internship", "Main G007" });
-//			mapThursday.put(14, new String[]
-//			{ "Web Development", "Lab Annex 3005" });
-//			mapThursday.put(15, new String[]
-//			{ "Web Development", "Lab Annex 3005" });
-//			mapThursday.put(16, new String[]
-//			{ "HCI", "Annex 3023" });
-//			mapThursday.put(17, new String[]
-//			{ "Free", "Free" });
-//			mapThursday.put(18, new String[]
-//			{ "finished", "no class" });
-//
-//			// class room
-//			return mapThursday.get(key)[0] + "-" + mapThursday.get(key)[1] + "-" + mapThursday.get(key + 1)[0]
-//					+ "-" + mapThursday.get(key + 1)[1];
-//
-//		}
-//
-//		else if (flag == 5)
-//		{
-//			mapFriday.put(8, new String[]
-//			{ "no class", "no class" });
-//			mapFriday.put(9, new String[]
-//			{ "Free", "Free" });
-//			mapFriday.put(10, new String[]
-//			{ "Maths", "Annex 3022" });
-//			mapFriday.put(11, new String[]
-//			{ "DataBases", "Lab Annex 1016" });
-//			mapFriday.put(12, new String[]
-//			{ "DataBases", "Lab Annex 1016" });
-//			mapFriday.put(13, new String[]
-//			{ "Free", "Free" });
-//			mapFriday.put(14, new String[]
-//			{ "Free", "Free" });
-//			mapFriday.put(15, new String[]
-//			{ "Free", "Free" });
-//			mapFriday.put(16, new String[]
-//			{ "Free", "Free" });
-//			mapFriday.put(17, new String[]
-//			{ "Free", "Free" });
-//			mapFriday.put(18, new String[]
-//			{ "finished", "no class" });
-//
-//			// class room
-//			return mapFriday.get(key)[0] + "-" + mapFriday.get(key)[1] + "-" + mapFriday.get(key + 1)[0] + "-"
-//					+ mapFriday.get(key + 1)[1];
-//
-//		}
-//
-//		else
-//		{
-//
-//			return "No Classes";
-//		}
-//	}// endfuncion
+
+		
+		moduleRoom[0] = text1Display;
+		moduleRoom[1] = text2Display;
+
+		moduleRoom[2] = text3Display;
+		moduleRoom[3] = text4Display;
+		moduleRoom[4] = text5Display;
+		
+    	return moduleRoom;
+    	
+    }//end details
+    
+	public String populateTimeTable(int flag, int key)
+	{
+
+		if (flag == 1)
+		{
+			// each field must have 4 indexes - current class - room,
+		
+			mapMonday.put(8, new String[]
+			{ "No class", "No class" });
+			mapMonday.put(9, new String[]
+			{ "Networking", "Annex 3022" });
+			mapMonday.put(10, new String[]
+			{ "Networking", "Annex 3022" });
+			mapMonday.put(11, new String[]
+			{ "Networking lab A", "AU 1005" });
+			mapMonday.put(12, new String[]
+			{ "Networking lab A", "AU 1005" });
+			mapMonday.put(13, new String[]
+			{ "free", "free" });
+			mapMonday.put(14, new String[]
+			{ "Free", "Free" });
+			mapMonday.put(15, new String[]
+			{ "Maths", "Annex 3020" });
+			mapMonday.put(16, new String[]
+			{ "Networking", "Lab AU1005 (group B/C)" });
+			mapMonday.put(17, new String[]
+			{ "Networking", "Lab AU1005(group B/C)" });
+			mapMonday.put(18, new String[]
+			{ "Finished", "Home" });
+
+			// class room
+			return mapMonday.get(key)[0] + "-" + mapMonday.get(key)[1] + "-" + mapMonday.get(key + 1)[0] + "-"
+					+ mapMonday.get(key + 1)[1];
+		}
+
+		else if (flag == 2)
+		{
+			mapTuesday.put(8, new String[]
+			{ "no class", "no class" });
+			mapTuesday.put(9, new String[]
+			{ "DataBases", "Annex 3011" });
+			mapTuesday.put(10, new String[]
+			{ "Java", "Annex G025" });
+			mapTuesday.put(11, new String[]
+			{ "Java", "Annex 3021" });
+			mapTuesday.put(12, new String[]
+			{ "Free", "Free" });
+			mapTuesday.put(13, new String[]
+			{ "DataBases", "Annex 3021" });
+			mapTuesday.put(14, new String[]
+			{ "Free", "Free" });
+			mapTuesday.put(15, new String[]
+			{ "HCI", "Main B034" });
+			mapTuesday.put(16, new String[]
+			{ "HCI", "Lab AU1006" });
+			mapTuesday.put(17, new String[]
+			{ "HCI", "Lab AU1006" });
+			mapTuesday.put(18, new String[]
+			{ "Finished", "No Class" });
+
+			// class room
+			return mapTuesday.get(key)[0] + "-" + mapTuesday.get(key)[1] + "-" + mapTuesday.get(key + 1)[0]
+					+ "-" + mapTuesday.get(key + 1)[1];
+
+		}
+
+		else if (flag == 3)
+		{
+			mapWednesday.put(8, new String[]
+			{ "no class", "no class" });
+			mapWednesday.put(9, new String[]
+			{ "Free", "Free" });
+			mapWednesday.put(10, new String[]
+			{ "Maths", "Annex G028" });
+			mapWednesday.put(11, new String[]
+			{ "Web Development", "Annex 3020" });
+			mapWednesday.put(12, new String[]
+			{ "Web Development", "Annex 3020" });
+			mapWednesday.put(13, new String[]
+			{ "Internship", "Main B034" });
+			mapWednesday.put(14, new String[]
+			{ "Free", "Free" });
+			mapWednesday.put(15, new String[]
+			{ "Free", "Free" });
+			mapWednesday.put(16, new String[]
+			{ "free", "free" });
+			mapWednesday.put(17, new String[]
+			{ "free", "free" });
+			mapWednesday.put(18, new String[]
+			{ "Finished", "No class" });
+
+			// class room
+			return mapWednesday.get(key)[0] + "-" + mapWednesday.get(key)[1] + "-"
+					+ mapWednesday.get(key + 1)[0] + "-" + mapWednesday.get(key + 1)[1];
+
+		}
+
+		else if (flag == 4)
+		{
+			mapThursday.put(8, new String[]
+			{ "no class", "no class" });
+			mapThursday.put(9, new String[]
+			{ "Free", "Free" });
+			mapThursday.put(10, new String[]
+			{ "Java", "Annex  G027" });
+			mapThursday.put(11, new String[]
+			{ "Java", "Lab Annex 3008" });
+			mapThursday.put(12, new String[]
+			{ "Java", "Lab Annex 3008" });
+			mapThursday.put(13, new String[]
+			{ "Internship", "Main G007" });
+			mapThursday.put(14, new String[]
+			{ "Web Development", "Lab Annex 3005" });
+			mapThursday.put(15, new String[]
+			{ "Web Development", "Lab Annex 3005" });
+			mapThursday.put(16, new String[]
+			{ "HCI", "Annex 3023" });
+			mapThursday.put(17, new String[]
+			{ "Free", "Free" });
+			mapThursday.put(18, new String[]
+			{ "finished", "no class" });
+
+			// class room
+			return mapThursday.get(key)[0] + "-" + mapThursday.get(key)[1] + "-" + mapThursday.get(key + 1)[0]
+					+ "-" + mapThursday.get(key + 1)[1];
+
+		}
+
+		else if (flag == 5)
+		{
+			mapFriday.put(8, new String[]
+			{ "no class", "no class" });
+			mapFriday.put(9, new String[]
+			{ "Free", "Free" });
+			mapFriday.put(10, new String[]
+			{ "Maths", "Annex 3022" });
+			mapFriday.put(11, new String[]
+			{ "DataBases", "Lab Annex 1016" });
+			mapFriday.put(12, new String[]
+			{ "DataBases", "Lab Annex 1016" });
+			mapFriday.put(13, new String[]
+			{ "Free", "Free" });
+			mapFriday.put(14, new String[]
+			{ "Free", "Free" });
+			mapFriday.put(15, new String[]
+			{ "Free", "Free" });
+			mapFriday.put(16, new String[]
+			{ "Free", "Free" });
+			mapFriday.put(17, new String[]
+			{ "Free", "Free" });
+			mapFriday.put(18, new String[]
+			{ "finished", "no class" });
+
+			// class room
+			return mapFriday.get(key)[0] + "-" + mapFriday.get(key)[1] + "-" + mapFriday.get(key + 1)[0] + "-"
+					+ mapFriday.get(key + 1)[1];
+
+		}
+
+		else
+		{
+
+			return "No Classes";
+		}
+	}// endfuncion
     
 
     @Override
     public void onObjectClick(final ControlObjectClickEvent event) {
     	 //ADD IN THE CLICK LISTENER HERE 
-    	String module = "test 1";
-    	String classroom = "test 2";
+    	String module1 = "test 1";
+    	String classroom1 = "test 2";
+    	String module2 = "test 1";
+    	String classroom2 = "test 2";
+    	String minutes = "minutes Left";
 
-    	//String details1[] = details();
-//    	String details1[] = {"test1", "test2"};
-//    	module = details1[0];
-//    	classroom = details1[1];
+    	String details1[] = details();
+    
+    	module1= details1[0];
+    	classroom1 = details1[1];
+    	module2= details1[2];
+    	classroom2 = details1[3];
+    	minutes = details1[4];
     	
     	
        
     	
         Log.d(BackwardsCompatibleControlExtensionService.LOG_TAG, "onObjectClick() " + event.getClickType());
         if (event.getLayoutReference() == R.id.button1) {
-           sendText(R.id.module,"test1"); // change these to variable from the getClassInfo class
-           sendText(R.id.classroom, "test2");
+           sendText(R.id.module1,module1); // change these to variable from the getClassInfo class
+           sendText(R.id.classroom1, classroom1);
+           sendText(R.id.module2,module2); // change these to variable from the getClassInfo class
+           sendText(R.id.classroom2, classroom2);
+           sendText(R.id.button1, minutes);
            
         
         }//end if

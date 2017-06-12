@@ -7,14 +7,80 @@
     tools:context="com.eric.smartwatchapp1.ControlSmartWatch2"
     tools:ignore="ContentDescription,PxUsage" >
 
-    <TextView
-        android:id="@+id/hellosmartwatch2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textColor="@android:color/black"
-        android:textSize="25px"
-        android:text="HELLO ERIC STRONG"
-         />
+      <Button
+          android:id="@+id/button1"
+          style="?android:attr/buttonStyleSmall"
+          android:layout_width="220px"
+          android:layout_height="100px"
+          android:textSize="20px"
+          android:text="click me"
+          android:textColor="@android:color/black"
+          
+           />
+      
+     <TextView
+         android:id="@+id/now"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+         android:layout_below="@+id/button1"
+         android:text="NOW"
+         android:textAppearance="?android:attr/textAppearanceSmall"
+         android:textColor="@style/ExtensionLightTheme"
+         android:textSize="15px" />
+
+<TextView
+    android:id="@+id/classroom2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    android:text="Class Room"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:textSize="15px" />
+
+<TextView
+    android:id="@+id/classroom1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentLeft="true"
+    android:text="classroom"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:textSize="15px" />
+
+
+
+<TextView
+    android:id="@+id/next"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignBaseline="@+id/now"
+    android:layout_alignBottom="@+id/now"
+    android:layout_alignLeft="@+id/module2"
+    android:text="NEXT"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:textSize="15px" />
+
+<TextView
+    android:id="@+id/module1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/classroom1"
+    android:layout_alignParentLeft="true"
+    android:text="Module"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:textSize="15px" />
+
+<TextView
+    android:id="@+id/module2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignBaseline="@+id/module1"
+    android:layout_alignBottom="@+id/module1"
+    android:layout_alignLeft="@+id/classroom2"
+    android:text="Module"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:textSize="15px" />
 
 </RelativeLayout>
